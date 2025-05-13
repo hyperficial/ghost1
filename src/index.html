@@ -376,6 +376,10 @@
         }
     </style>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+      
+      <!-- Ultraviolet proxy setup (Owski please don't touch) -->
+    <script type="module" src="./proxy.ts"></script>
+    
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -446,6 +450,16 @@
         function initTheme() {
             const savedTheme = localStorage.getItem('theme') || 'default';
             setTheme(savedTheme);
+        }
+        
+        function getProxiedURL(url) {
+          return "/route/" + encodeURIComponent(
+            url
+                .toString()
+                .split('')
+                .map((char, ind) => (ind % 2 ? String.fromCharCode(char.charCodeAt(Number.NaN) ^ 2) : char))
+                .join('')
+            )
         }
         
         // Apply saved theme when page loads
