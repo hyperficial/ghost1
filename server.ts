@@ -9,9 +9,13 @@ import fastifyMiddie from "@fastify/middie";
 import fastifyStatic from "@fastify/static";
 import { fileURLToPath } from "node:url";
 import wisp from "wisp-server-node";
+import { build } from "vite";
 
 import { createServer } from "node:http";
 import type { Socket } from "node:net";
+
+console.log("Building frontend");
+await build();
 
 const serverFactory: FastifyServerFactory = (
 	handler: FastifyServerFactoryHandler,
