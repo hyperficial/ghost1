@@ -39,14 +39,14 @@ const app = Fastify({
 });
 
 await app.register(fastifyStatic, {
-	root: fileURLToPath(new URL("./public", import.meta.url)),
+	root: fileURLToPath(new URL("./dist", import.meta.url)),
 });
 
 await app.register(fastifyMiddie);
 
 const port =
-	Number.parseInt(process.env.PORT as string) || Number.parseInt("8080");
+	Number.parseInt(process.env.PORT as string) || Number.parseInt("3000");
 
 app.listen({ port: port, host: "0.0.0.0" }).then(async () => {
-	console.log(`Server listening on http://localhost:${port}/`);
+	console.log(`Listening on http://localhost:${port}`);
 });
