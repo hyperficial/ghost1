@@ -23,6 +23,7 @@
     "fastify": "^5.3.2",
     "vite": "^6.3.5",
     "vite-plugin-minify": "^2.1.0",
-    "vite-plugin-static-copy": "^3.0.0"
+    "vite-plugin-static-copy": "^3.0.0",
+    "wisp-server-node": "^1.1.7"
   }
 }
